@@ -139,7 +139,18 @@ CREATE TABLE USER_RECIVE (
         FOREIGN KEY (IDUSER) REFERENCES chatuser(IDUSER) 
         ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE "Tokens" (
+    "Id"            BIGSERIAL PRIMARY KEY,
+    "Token"         TEXT NOT NULL,
+    "ExpiresAt"     TIMESTAMPTZ NOT NULL,
+    "CreatedAt"     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "IsValid"       BOOLEAN NOT NULL DEFAULT true
+);
 
+-- Index pour améliorer les performances (très recommandé)
+CREATE INDEX idx_tokens_token ON "Tokens"("Token");
+CREATE INDEX idx_tokens_expiresat ON "Tokens"("ExpiresAt");
+CREATE INDEX idx_tokens_isvalid ON "Tokens"("IsValid");
 -- =====================================================
 -- Index pour améliorer les performances
 -- =====================================================
