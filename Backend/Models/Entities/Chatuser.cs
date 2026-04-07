@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Backend.Models.Entities;
 
 [Table("chatuser")]
-[Index("Username", Name = "USER_username_key", IsUnique = true)]
+[Index("Username", Name = "chatuser_username_key", IsUnique = true)]
 public partial class Chatuser
 {
     [Key]

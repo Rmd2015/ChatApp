@@ -28,29 +28,12 @@ public partial class ChatDbContext : DbContext
 
     public virtual DbSet<MsgAppartient> MsgAppartient { get; set; }
 
+    public virtual DbSet<Tokens> Tokens { get; set; }
+
     public virtual DbSet<UserRecive> UserRecive { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder
-            .HasPostgresEnum("auth", "aal_level", new[] { "aal1", "aal2", "aal3" })
-            .HasPostgresEnum("auth", "code_challenge_method", new[] { "s256", "plain" })
-            .HasPostgresEnum("auth", "factor_status", new[] { "unverified", "verified" })
-            .HasPostgresEnum("auth", "factor_type", new[] { "totp", "webauthn", "phone" })
-            .HasPostgresEnum("auth", "oauth_authorization_status", new[] { "pending", "approved", "denied", "expired" })
-            .HasPostgresEnum("auth", "oauth_client_type", new[] { "public", "confidential" })
-            .HasPostgresEnum("auth", "oauth_registration_type", new[] { "dynamic", "manual" })
-            .HasPostgresEnum("auth", "oauth_response_type", new[] { "code" })
-            .HasPostgresEnum("auth", "one_time_token_type", new[] { "confirmation_token", "reauthentication_token", "recovery_token", "email_change_token_new", "email_change_token_current", "phone_change_token" })
-            .HasPostgresEnum("realtime", "action", new[] { "INSERT", "UPDATE", "DELETE", "TRUNCATE", "ERROR" })
-            .HasPostgresEnum("realtime", "equality_op", new[] { "eq", "neq", "lt", "lte", "gt", "gte", "in" })
-            .HasPostgresEnum("storage", "buckettype", new[] { "STANDARD", "ANALYTICS", "VECTOR" })
-            .HasPostgresExtension("extensions", "pg_stat_statements")
-            .HasPostgresExtension("extensions", "pgcrypto")
-            .HasPostgresExtension("extensions", "uuid-ossp")
-            .HasPostgresExtension("graphql", "pg_graphql")
-            .HasPostgresExtension("vault", "supabase_vault");
-
         modelBuilder.Entity<Attachment>(entity =>
         {
             entity.HasKey(e => e.Idattachment).HasName("attachment_pkey");
@@ -78,9 +61,8 @@ public partial class ChatDbContext : DbContext
 
         modelBuilder.Entity<Chatuser>(entity =>
         {
-            entity.HasKey(e => e.Iduser).HasName("USER_pkey");
+            entity.HasKey(e => e.Iduser).HasName("chatuser_pkey");
 
-            entity.Property(e => e.Iduser).HasDefaultValueSql("nextval('\"USER_iduser_seq\"'::regclass)");
             entity.Property(e => e.Createdat).HasDefaultValueSql("now()");
             entity.Property(e => e.Isconnect).HasDefaultValue(false);
         });
@@ -120,6 +102,14 @@ public partial class ChatDbContext : DbContext
             entity.HasOne(d => d.IdchatroomNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appa_msg_appar_chatroom");
 
             entity.HasOne(d => d.IdmsgNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appa_msg_appar_message");
+        });
+
+        modelBuilder.Entity<Tokens>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("Tokens_pkey");
+
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("now()");
+            entity.Property(e => e.IsValid).HasDefaultValue(true);
         });
 
         modelBuilder.Entity<UserRecive>(entity =>

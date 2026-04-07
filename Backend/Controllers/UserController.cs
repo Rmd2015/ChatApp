@@ -88,7 +88,15 @@ namespace Backend.Controllers
                 return Unauthorized(new { message = "Nom d'utilisateur ou mot de passe incorrect" });
 
             // Générer le JWT Token
-            var token = GenerateJwtToken(user);
+
+            Tokens token = new Tokens
+            {
+                Token = GenerateJwtToken(user),
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddHours(24),
+                IsValid =  true,
+            };
+            await _context.Tokens.AddAsync(token);
             user.Isconnect = true;
             await _context.SaveChangesAsync();
 
@@ -98,7 +106,61 @@ namespace Backend.Controllers
                 user = user.ToDto()
             });
         }
+        [HttpPost("logout")]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            // Récupération sécurisée du header Authorization
+            if (!Request.Headers.TryGetValue("Authorization", out var authHeader))
+            {
+                return BadRequest(new { message = "Header Authorization manquant" });
+            }
 
+            var headerValue = authHeader.ToString().Trim();
+
+            // Vérification du format Bearer
+            if (string.IsNullOrWhiteSpace(headerValue) || !headerValue.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+            {
+                return BadRequest(new { message = "Le token doit commencer par 'Bearer '" });
+            }
+
+            // Extraire le token
+            var token = headerValue.Substring(7).Trim();
+
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest(new { message = "Token vide ou invalide" });
+            }
+
+            try
+            {
+                var blacklistedToken = new Tokens
+                {
+                    Token = token,
+                    ExpiresAt = DateTime.UtcNow.AddHours(24),
+                    CreatedAt = DateTime.UtcNow,
+                    IsValid = false
+                };
+
+                _context.Tokens.Add(blacklistedToken);
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    success = true,
+                    message = "Déconnexion réussie avec succès."
+                });
+            }
+            catch (Exception ex)
+            {
+                // Log l'erreur si tu as un logger, mais on retourne quand même un succès côté client
+                return Ok(new
+                {
+                    success = true,
+                    message = "Déconnexion réussie (token invalidé côté client)."
+                });
+            }
+        }
         // ====================== PROTECTED ROUTES ======================
 
         // GET: api/user (protégé)

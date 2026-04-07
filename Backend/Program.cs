@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // ====================== Configuration de la base de données ======================
@@ -24,8 +26,10 @@ builder.Services.AddDbContext<ChatDbContext>(options =>
          
         });
 });
-// ====================== JWT Configuration ======================
+// ====================== JWT + verfication des tokens prealabele ======================
 var jwtSection = builder.Configuration.GetSection("Jwt");
+var jwtKey = jwtSection["Key"]
+    ?? throw new InvalidOperationException("JWT Key is not configured");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -36,20 +40,75 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-
             ValidIssuer = jwtSection["Issuer"],
             ValidAudience = jwtSection["Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtSection["Key"] ?? throw new InvalidOperationException("JWT Key is missing"))),
-
-            ClockSkew = TimeSpan.Zero   // Évite le délai de 5 minutes par défaut
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+            ClockSkew = TimeSpan.Zero
         };
-    });
+
+        // Vérification de la blacklist (Tokens)
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = async context =>
+            {
+                var token = context.SecurityToken as JwtSecurityToken;
+                if (token == null) return;
+
+                var dbContext = context.HttpContext.RequestServices.GetRequiredService<ChatDbContext>();
+
+                var isBlacklisted = await dbContext.Tokens
+                    .AnyAsync(t => t.Token == token.RawData
+                                && t.ExpiresAt > DateTime.UtcNow
+                                && t.IsValid == false);
+
+                if (isBlacklisted)
+                {
+                    context.Fail("Token has been revoked");
+                }
+            }
+        };
+    }); ;
 // ====================== Ajout des services ======================
 
 builder.Services.AddControllers();
+// ====================== Swagger avec JWT ======================
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "ChatApp API",
+        Version = "v1",
+        Description = "Backend API pour l'application de chat"
+    });
+
+    // Définition de la sécurité Bearer
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Entrez le token JWT : Bearer {votre_token}",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT"
+    });
+
+    // Exigence de sécurité globale
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 // Ajout de CORS (important pour React)
 builder.Services.AddCors(options =>
