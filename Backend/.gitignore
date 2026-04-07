@@ -1,31 +1,38 @@
-﻿# Binaries
+﻿# Build output
 bin/
 obj/
-*.exe
-*.dll
 
-# Secrets
-appsettings.json
-*.usersecrets
-ConnectionStrings.json
-
-# Docker
-.dockerignore
-docker-compose.override.yml
-
-# Visual Studio
+# Visual Studio / Rider / VS Code
 .vscode/
 .vs/
-*.sln
+.idea/
 *.suo
 *.user
+*.sln.cache
 
-# Logs
+# Secrets & sensitive files
+appsettings.Development.json
+*.usersecrets
+secrets.json
+ConnectionStrings.json
+
+# Docker specific
+docker-compose.override.yml
+
+# Logs and temporary files
 *.log
+logs/
+temp/
 
 # NuGet
 packages/
 *.nupkg
+*.snupkg
 
-# Mac / OS
+# OS files
 .DS_Store
+Thumbs.db
+
+# Other
+*.tmp
+*.temp
