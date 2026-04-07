@@ -1,0 +1,30 @@
+﻿
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ChatAppBddb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: RMD2015
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"           # ← Important : doit correspondre au port du Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8085
+      - ConnectionStrings__DefaultConnection=Host=host.docker.internal;Port=5432;Database=ChatAppBdd;Username=postgres;Password=RMD2015;Pooling=true
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

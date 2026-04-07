@@ -1,0 +1,31 @@
+﻿# Binaries
+bin/
+obj/
+*.exe
+*.dll
+
+# Secrets
+appsettings.json
+*.usersecrets
+ConnectionStrings.json
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Visual Studio
+.vscode/
+.vs/
+*.sln
+*.suo
+*.user
+
+# Logs
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# Mac / OS
+.DS_Store

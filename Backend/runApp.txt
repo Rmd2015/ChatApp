@@ -1,0 +1,14 @@
+
+pour recomplier et lancer le conainer 
+# Nettoie et relance tout proprement
+docker compose down
+docker compose up --build -d
+
+# Voir les logs du backend
+docker compose logs -f backend
+
+
+bdd password : RamdaniChatAPP2015
+bddName: ChatAppBdd
+scaffold commande: 
+dotnet ef dbcontext scaffold "Host=aws-0-eu-west-1.pooler.supabase.com;Port=6543;Database=postgres;Username=postgres.otwycvqpycdgxwqwqreo;Password=RamdaniChatAPP2015;Trust Server Certificate=true" Npgsql.EntityFrameworkCore.PostgreSQL --context ChatDbContext --output-dir Models/Entities --context-dir Data --force --no-pluralize --data-annotations --schema public
