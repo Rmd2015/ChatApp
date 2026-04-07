@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_DB: ChatAppBddb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: RMD2015
+      POSTGRES_PASSWORD: ***********
     ports:
       - "5432:5432"
     volumes:
@@ -22,7 +22,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8085
-      - ConnectionStrings__DefaultConnection=Host=host.docker.internal;Port=5432;Database=ChatAppBdd;Username=postgres;Password=RMD2015;Pooling=true
+      - ConnectionStrings__DefaultConnection=Host=host.docker.internal;Port=5432;Database=ChatAppBdd;Username=********;Password=********;Pooling=true
     depends_on:
       - db
 
