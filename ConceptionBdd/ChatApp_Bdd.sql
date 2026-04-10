@@ -147,6 +147,13 @@ CREATE TABLE USER_RECIVE (
     CONSTRAINT FK_USER_RECIVE_MESSAGE 
         FOREIGN KEY (IDMSG) REFERENCES MESSAGE(IDMSG) ON DELETE CASCADE
 );
+CREATE TABLE "Tokens" (
+    "Id"            BIGSERIAL PRIMARY KEY,
+    "Token"         TEXT NOT NULL,
+    "ExpiresAt"     TIMESTAMPTZ NOT NULL,
+    "CreatedAt"     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "IsValid"       BOOLEAN NOT NULL DEFAULT true
+);
 
 -- Index pour les performances
 CREATE INDEX idx_chatroommember_user ON CHATROOMMEMBER(IDUSER);
