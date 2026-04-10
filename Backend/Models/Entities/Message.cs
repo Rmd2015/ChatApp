@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Backend.Models.Entities;
 
 [Table("message")]
-[Index("Iduser", Name = "idx_message_sender")]
+[Index("Createdat", Name = "idx_message_createdat", AllDescending = true)]
 public partial class Message
 {
     [Key]

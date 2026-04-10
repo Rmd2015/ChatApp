@@ -8,7 +8,7 @@ namespace Backend.Models.Entities;
 
 [PrimaryKey("Iduser", "Idmsg")]
 [Table("user_recive")]
-[Index("Idmsg", Name = "idx_user_recive_msg")]
+[Index("Iduser", Name = "idx_user_recive_user")]
 public partial class UserRecive
 {
     [Key]

@@ -8,7 +8,7 @@ namespace Backend.Models.Entities;
 
 [PrimaryKey("Idmsg", "Idchatroom")]
 [Table("msg_appartient")]
-[Index("Idchatroom", Name = "idx_message_chatroom")]
+[Index("Idchatroom", Name = "idx_msg_appartient_chatroom")]
 public partial class MsgAppartient
 {
     [Key]

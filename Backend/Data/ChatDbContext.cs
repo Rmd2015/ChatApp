@@ -37,6 +37,8 @@ public partial class ChatDbContext : DbContext
         modelBuilder.Entity<Attachment>(entity =>
         {
             entity.HasKey(e => e.Idattachment).HasName("attachment_pkey");
+
+            entity.Property(e => e.Createdat).HasDefaultValueSql("now()");
         });
 
         modelBuilder.Entity<Chatroom>(entity =>
@@ -45,7 +47,9 @@ public partial class ChatDbContext : DbContext
 
             entity.Property(e => e.Roomcreatedat).HasDefaultValueSql("now()");
 
-            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Chatroom).HasConstraintName("fk_chatroom_user_crea_user");
+            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Chatroom)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("fk_chatroom_creator");
         });
 
         modelBuilder.Entity<Chatroommember>(entity =>
@@ -54,9 +58,9 @@ public partial class ChatDbContext : DbContext
 
             entity.Property(e => e.Useraddat).HasDefaultValueSql("now()");
 
-            entity.HasOne(d => d.IdchatroomNavigation).WithMany(p => p.Chatroommember).HasConstraintName("fk_chatroom_chatroomm_chatroom");
+            entity.HasOne(d => d.IdchatroomNavigation).WithMany(p => p.Chatroommember).HasConstraintName("fk_chatroommember_chatroom");
 
-            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Chatroommember).HasConstraintName("fk_chatroom_chatroomm_user");
+            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Chatroommember).HasConstraintName("fk_chatroommember_user");
         });
 
         modelBuilder.Entity<Chatuser>(entity =>
@@ -73,17 +77,19 @@ public partial class ChatDbContext : DbContext
 
             entity.Property(e => e.Createdat).HasDefaultValueSql("now()");
 
-            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Message).HasConstraintName("fk_message_user_send_user");
+            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Message)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("fk_message_sender");
 
             entity.HasMany(d => d.Idattachment).WithMany(p => p.Idmsg)
                 .UsingEntity<Dictionary<string, object>>(
                     "MsgContient",
                     r => r.HasOne<Attachment>().WithMany()
                         .HasForeignKey("Idattachment")
-                        .HasConstraintName("fk_msg_cont_msg_conti_attachme"),
+                        .HasConstraintName("fk_msg_contient_attachment"),
                     l => l.HasOne<Message>().WithMany()
                         .HasForeignKey("Idmsg")
-                        .HasConstraintName("fk_msg_cont_msg_conti_message"),
+                        .HasConstraintName("fk_msg_contient_message"),
                     j =>
                     {
                         j.HasKey("Idmsg", "Idattachment").HasName("pk_msg_contient");
@@ -99,17 +105,19 @@ public partial class ChatDbContext : DbContext
 
             entity.Property(e => e.Msgsendchatroomat).HasDefaultValueSql("now()");
 
-            entity.HasOne(d => d.IdchatroomNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appa_msg_appar_chatroom");
+            entity.HasOne(d => d.IdchatroomNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appartient_chatroom");
 
-            entity.HasOne(d => d.IdmsgNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appa_msg_appar_message");
+            entity.HasOne(d => d.IdmsgNavigation).WithMany(p => p.MsgAppartient).HasConstraintName("fk_msg_appartient_message");
         });
 
         modelBuilder.Entity<Tokens>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("Tokens_pkey");
+            entity.HasKey(e => e.Idtoken).HasName("tokens_pkey");
 
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("now()");
-            entity.Property(e => e.IsValid).HasDefaultValue(true);
+            entity.Property(e => e.Createdat).HasDefaultValueSql("now()");
+            entity.Property(e => e.Isvalid).HasDefaultValue(true);
+
+            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.Tokens).HasConstraintName("fk_tokens_user");
         });
 
         modelBuilder.Entity<UserRecive>(entity =>
@@ -119,9 +127,9 @@ public partial class ChatDbContext : DbContext
             entity.Property(e => e.Msgvue).HasDefaultValue(false);
             entity.Property(e => e.Recivedat).HasDefaultValueSql("now()");
 
-            entity.HasOne(d => d.IdmsgNavigation).WithMany(p => p.UserRecive).HasConstraintName("fk_user_rec_user_reci_message");
+            entity.HasOne(d => d.IdmsgNavigation).WithMany(p => p.UserRecive).HasConstraintName("fk_user_recive_message");
 
-            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.UserRecive).HasConstraintName("fk_user_rec_user_reci_user");
+            entity.HasOne(d => d.IduserNavigation).WithMany(p => p.UserRecive).HasConstraintName("fk_user_recive_user");
         });
 
         OnModelCreatingPartial(modelBuilder);

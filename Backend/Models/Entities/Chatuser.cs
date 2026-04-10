@@ -38,5 +38,8 @@ public partial class Chatuser
     public virtual ICollection<Message> Message { get; set; } = new List<Message>();
 
     [InverseProperty("IduserNavigation")]
+    public virtual ICollection<Tokens> Tokens { get; set; } = new List<Tokens>();
+
+    [InverseProperty("IduserNavigation")]
     public virtual ICollection<UserRecive> UserRecive { get; set; } = new List<UserRecive>();
 }

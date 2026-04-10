@@ -19,7 +19,10 @@ public partial class Attachment
 
     [Column("attachmentpath")]
     [StringLength(150)]
-    public string? Attachmentpath { get; set; }
+    public string Attachmentpath { get; set; } = null!;
+
+    [Column("createdat")]
+    public DateTime? Createdat { get; set; }
 
     [ForeignKey("Idattachment")]
     [InverseProperty("Idattachment")]

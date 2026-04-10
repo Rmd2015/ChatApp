@@ -4,9 +4,10 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{413AD23E-4EDF-4212-8AE4-E16CF650F555}" Name="ChatAppMCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="../../WhoUAre/MCD/WhoUAreConception/ChatAppMCD.mcd"/>
+		<Model Expanded="Yes" ID="{413AD23E-4EDF-4212-8AE4-E16CF650F555}" Loaded="No" Name="ChatAppMCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="../../WhoUAre/MCD/WhoUAreConception/ChatAppMCD.mcd"/>
 		<Model ID="{E1A821FE-565D-4DFD-8F4C-260BBFD296CA}" Name="ChatAppMLD" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="../../WhoUAre/MCD/WhoUAreConception/ChatAppMLD.mld"/>
-		<Model Expanded="Yes" ID="{CB21EB6F-07A6-43E7-8D65-BB5833DA8AEB}" Name="ChatAppMPD" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ChatAppMPD.mpd"/>
+		<Model Expanded="Yes" ID="{CB21EB6F-07A6-43E7-8D65-BB5833DA8AEB}" Name="ChatAppMPD" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ChatAppMPD.mpd"/>
+		<Model Expanded="Yes" ID="{413AD23E-4EDF-4212-8AE4-E16CF650F555}" Name="ChatAppMCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="../../WhoUAre/MCD/WhoUAreConception/ChatAppMCD.mcd"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>
