@@ -6,19 +6,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Models.Entities;
 
-[Index("ExpiresAt", Name = "idx_tokens_expiresat")]
-[Index("IsValid", Name = "idx_tokens_isvalid")]
-[Index("Token", Name = "idx_tokens_token")]
+[Table("tokens")]
+[Index("Iduser", Name = "idx_tokens_user")]
+[Index("Token", Name = "tokens_token_key", IsUnique = true)]
 public partial class Tokens
 {
     [Key]
-    public long Id { get; set; }
+    [Column("idtoken")]
+    public long Idtoken { get; set; }
 
+    [Column("iduser")]
+    public long Iduser { get; set; }
+
+    [Column("token")]
+    [StringLength(300)]
     public string Token { get; set; } = null!;
 
-    public DateTime ExpiresAt { get; set; }
+    [Column("expiresat")]
+    public DateTime Expiresat { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    [Column("createdat")]
+    public DateTime? Createdat { get; set; }
 
-    public bool IsValid { get; set; }
+    [Column("isvalid")]
+    public bool? Isvalid { get; set; }
+
+    [ForeignKey("Iduser")]
+    [InverseProperty("Tokens")]
+    public virtual Chatuser IduserNavigation { get; set; } = null!;
 }
