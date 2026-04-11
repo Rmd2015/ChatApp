@@ -92,9 +92,10 @@ namespace Backend.Controllers
             Tokens token = new Tokens
             {
                 Token = GenerateJwtToken(user),
-                CreatedAt = DateTime.UtcNow,
-                ExpiresAt = DateTime.UtcNow.AddHours(24),
-                IsValid =  true,
+                Createdat = DateTime.UtcNow,
+                Expiresat = DateTime.UtcNow.AddHours(24),
+                Isvalid =  true,
+                Iduser  = user.Iduser,
             };
             await _context.Tokens.AddAsync(token);
             user.Isconnect = true;
@@ -102,7 +103,7 @@ namespace Backend.Controllers
 
             return Ok(new
             {
-                token = token,
+                token = token.ToDto(),
                 user = user.ToDto()
             });
         }
@@ -134,15 +135,24 @@ namespace Backend.Controllers
 
             try
             {
-                var blacklistedToken = new Tokens
+                var blackToken = await _context.Tokens
+                .FirstOrDefaultAsync(t => t.Token == token && t.Expiresat > DateTime.UtcNow
+                           && t.Isvalid == true);
+                if (null == blackToken)
                 {
-                    Token = token,
-                    ExpiresAt = DateTime.UtcNow.AddHours(24),
-                    CreatedAt = DateTime.UtcNow,
-                    IsValid = false
-                };
+                    return BadRequest(new { message = "Token  invalide" });
+                }
 
-                _context.Tokens.Add(blacklistedToken);
+                blackToken.Isvalid = false;
+                blackToken.Expiresat = DateTime.UtcNow;
+                // Version corrigée
+                var user = await _context.Chatuser
+                    .FirstOrDefaultAsync(u => u.Iduser == blackToken.Iduser && u.Isconnect == true);// je fait ca car Isconnect is nullabele value bool? 
+                if (user == null) {
+                    return BadRequest(new { message = "User invalide" });
+
+                }
+                user.Isconnect = false;
                 await _context.SaveChangesAsync();
 
                 return Ok(new
@@ -156,6 +166,7 @@ namespace Backend.Controllers
                 // Log l'erreur si tu as un logger, mais on retourne quand même un succès côté client
                 return Ok(new
                 {
+                    details = ex.Message,
                     success = true,
                     message = "Déconnexion réussie (token invalidé côté client)."
                 });
@@ -168,6 +179,7 @@ namespace Backend.Controllers
         [Authorize]                         // ← Nécessite un token JWT
         public async Task<ActionResult<IEnumerable<UserDto>>> GetAllUsers()
         {
+            //  (on a besoin de tracking pour modifier l'entité).----> AsNoTracking usitilser seulement dans le select dans l insert/update no
             var users = await _context.Chatuser.AsNoTracking()// cette ligne est tres important car je fait le select seulement pas update ou insert ---> donc pas besoin de tracking la rqt!!
                 .ToListAsync();
             return Ok(users.ToDtoList());

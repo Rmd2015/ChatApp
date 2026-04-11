@@ -19,7 +19,7 @@ public partial class Tokens
     public long Iduser { get; set; }
 
     [Column("token")]
-    [StringLength(300)]
+    [StringLength(1000)]
     public string Token { get; set; } = null!;
 
     [Column("expiresat")]

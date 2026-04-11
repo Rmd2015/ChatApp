@@ -58,8 +58,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
                 var isBlacklisted = await dbContext.Tokens
                     .AnyAsync(t => t.Token == token.RawData
-                                && t.ExpiresAt > DateTime.UtcNow
-                                && t.IsValid == false);
+                                && t.Expiresat > DateTime.UtcNow
+                                && t.Isvalid == false);
 
                 if (isBlacklisted)
                 {

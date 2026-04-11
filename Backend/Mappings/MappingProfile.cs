@@ -117,7 +117,17 @@ namespace Backend.Mappings
         }
 
         #endregion
-
+        #region Token Mappings
+        public static TokensDtoForSelect ToDto(this Tokens token)
+        {
+            return new TokensDtoForSelect
+            {
+                
+                Token = token.Token,
+          
+            };
+        }
+        #endregion
         // ====================== Méthodes pour List ======================
 
         public static List<UserDto> ToDtoList(this IEnumerable<Chatuser> users)
