@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{CB21EB6F-07A6-43E7-8D65-BB5833DA8AEB}" Label="" LastModificationDate="1775856358" Name="ChatAppMPD" Objects="80" Symbols="20" Target="PostgreSQL 8" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{CB21EB6F-07A6-43E7-8D65-BB5833DA8AEB}" Label="" LastModificationDate="1775917014" Name="ChatAppMPD" Objects="81" Symbols="20" Target="PostgreSQL 8" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,10 +12,10 @@
 <a:Code>CHATAPPMPD</a:Code>
 <a:CreationDate>1775299756</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Modifier>lenevo</a:Modifier>
 <a:History>ORG {E1A821FE-565D-4DFD-8F4C-260BBFD296CA}
-DAT 1775856357
+DAT 1775917014
 ATT FOPT</a:History>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -2452,9 +2452,9 @@ PhysOpts=</a:ModelOptionsText>
 <a:ObjectID>DA0BDCB5-A78D-4807-8859-D607C72EAE83</a:ObjectID>
 <a:Name>ChatAppMLD</a:Name>
 <a:Code>CHATAPPMLD</a:Code>
-<a:CreationDate>1775856358</a:CreationDate>
+<a:CreationDate>1775917014</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
-<a:ModificationDate>1775856358</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Modifier>lenevo</a:Modifier>
 <a:TargetStereotype/>
 <a:TargetID>E1A821FE-565D-4DFD-8F4C-260BBFD296CA</a:TargetID>
@@ -3201,7 +3201,7 @@ Shadow=0
 <a:PaperSource>7</a:PaperSource>
 <c:Symbols>
 <o:ReferenceSymbol Id="o6">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-18878,-1124), (7123,5176))</a:Rect>
 <a:ListOfPoints>((-18878,5176),(7123,5176),(7123,-1124))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3222,7 +3222,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o10">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((7273,-974), (10387,21079))</a:Rect>
 <a:ListOfPoints>((10387,21079),(10387,10351),(7273,10351),(7273,-974))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3243,7 +3243,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o13">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((7423,-20755), (9899,-824))</a:Rect>
 <a:ListOfPoints>((9899,-20755),(9899,-10452),(7423,-10452),(7423,-824))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3264,7 +3264,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o16">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-7655,-8157), (9183,-943))</a:Rect>
 <a:ListOfPoints>((-7655,-8157),(9183,-8157),(9183,-943))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3285,7 +3285,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o19">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-20324,-6096), (-19874,5391))</a:Rect>
 <a:ListOfPoints>((-20198,-6096),(-20198,415),(-20000,415),(-20000,5391))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3306,7 +3306,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o22">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-20319,-16497), (-18571,-6096))</a:Rect>
 <a:ListOfPoints>((-20319,-6096),(-20319,-10296),(-18571,-10296),(-18571,-16497))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3327,7 +3327,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o25">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-18744,-8161), (-6828,3966))</a:Rect>
 <a:ListOfPoints>((-6828,-8161),(-6828,3966),(-18744,3966))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3348,7 +3348,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o27">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((10262,13853), (13735,21275))</a:Rect>
 <a:ListOfPoints>((10262,13853),(10262,18015),(13735,18015),(13735,21275))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3369,7 +3369,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o30">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((8133,-873), (11031,13853))</a:Rect>
 <a:ListOfPoints>((11031,13853),(11031,8950),(8133,8950),(8133,-873))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3390,7 +3390,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o32">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-18005,5608), (-11777,17086))</a:Rect>
 <a:ListOfPoints>((-11777,17086),(-11777,11711),(-18005,11711),(-18005,5608))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3411,7 +3411,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o35">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Rect>((-11627,17236), (10957,21275))</a:Rect>
 <a:ListOfPoints>((-11627,17236),(-11627,21275),(10957,21275))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
@@ -3432,7 +3432,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:ReferenceSymbol>
 <o:TableSymbol Id="o8">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((1047,-3858), (13199,1610))</a:Rect>
 <a:LineColor>11184640</a:LineColor>
@@ -3456,7 +3456,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o7">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-23448,2442), (-14308,7910))</a:Rect>
 <a:LineColor>11184640</a:LineColor>
@@ -3480,7 +3480,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o23">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-24140,-18745), (-9362,-14251))</a:Rect>
 <a:LineColor>11184640</a:LineColor>
@@ -3504,7 +3504,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o20">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-26468,-8095), (-15242,-4096))</a:Rect>
 <a:LineColor>16744576</a:LineColor>
@@ -3528,7 +3528,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o17">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-12093,-11379), (-1563,-4937))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
@@ -3553,7 +3553,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o11">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((4774,18832), (16000,23326))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
@@ -3578,7 +3578,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o28">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((5561,11607), (16787,16101))</a:Rect>
 <a:LineColor>16744576</a:LineColor>
@@ -3602,7 +3602,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o33">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((-19129,14840), (-4427,19334))</a:Rect>
 <a:LineColor>16744576</a:LineColor>
@@ -3626,7 +3626,7 @@ LABL 0 Arial,8,N</a:FontList>
 </c:Object>
 </o:TableSymbol>
 <o:TableSymbol Id="o14">
-<a:ModificationDate>1775856357</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
 <a:Rect>((3630,-24463), (16168,-17047))</a:Rect>
 <a:LineColor>11184640</a:LineColor>
@@ -3940,7 +3940,7 @@ DAT 1775299699</a:History>
 <a:Code>CHATROOM</a:Code>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
-<a:ModificationDate>1775299781</a:ModificationDate>
+<a:ModificationDate>1775917014</a:ModificationDate>
 <a:Modifier>lenevo</a:Modifier>
 <a:History>ORG {F987A4B5-1B82-4C05-B8D7-630BC941A15A}
 DAT 1775299782
@@ -3994,9 +3994,24 @@ ORG {D72DB3B3-0FB9-4126-BB70-1A36BBD06614}
 DAT 1775299628</a:History>
 <a:DataType>DATE</a:DataType>
 </o:Column>
+<o:Column Id="o63">
+<a:ObjectID>FC71873C-DCD7-4884-B1DE-2719C69ADC65</a:ObjectID>
+<a:Name>ChatRoomLabel</a:Name>
+<a:Code>CHATROOMLABEL</a:Code>
+<a:CreationDate>1775917012</a:CreationDate>
+<a:Creator>lenevo</a:Creator>
+<a:ModificationDate>1775917014</a:ModificationDate>
+<a:Modifier>lenevo</a:Modifier>
+<a:History>ORG {EA43EC10-6306-410C-AAA9-A6C4D0972D7D}
+DAT 1775917012
+ORG {5B214F2E-F868-4D98-B1BC-0A46844EE068}
+DAT 1775917001</a:History>
+<a:DataType>VARCHAR(30)</a:DataType>
+<a:Length>30</a:Length>
+</o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o63">
+<o:Key Id="o64">
 <a:ObjectID>90E9E6F7-5D6A-49CE-8B03-F624ED5F0BB5</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4014,7 +4029,7 @@ DAT 1775299628</a:History>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o63"/>
+<o:Key Ref="o64"/>
 </c:PrimaryKey>
 </o:Table>
 <o:Table Id="o40">
@@ -4031,7 +4046,7 @@ ORG {96B4599B-2F3B-4FEC-AF88-E16AEBA75C17}
 DAT 1775299628</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
-<o:Column Id="o64">
+<o:Column Id="o65">
 <a:ObjectID>0C2D11E2-ED18-4744-8888-B11834357E3D</a:ObjectID>
 <a:Name>IdMsg</a:Name>
 <a:Code>IDMSG</a:Code>
@@ -4047,7 +4062,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o65">
+<o:Column Id="o66">
 <a:ObjectID>A0ED009B-C780-4B67-B914-69E36B16DA4B</a:ObjectID>
 <a:Name>IdAttachment</a:Name>
 <a:Code>IDATTACHMENT</a:Code>
@@ -4065,7 +4080,7 @@ DAT 1775299699</a:History>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o66">
+<o:Key Id="o67">
 <a:ObjectID>6EDE0668-81F7-4E48-948F-9D2E9B989D5A</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4076,13 +4091,13 @@ DAT 1775299699</a:History>
 <a:History>ORG {4205B4C7-4BDA-4013-B5DF-D1D7AF11A930}
 DAT 1775299782</a:History>
 <c:Key.Columns>
-<o:Column Ref="o64"/>
 <o:Column Ref="o65"/>
+<o:Column Ref="o66"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o66"/>
+<o:Key Ref="o67"/>
 </c:PrimaryKey>
 </o:Table>
 <o:Table Id="o41">
@@ -4099,7 +4114,7 @@ ORG {EC1B63DF-54C1-47B0-B89B-DF58D21AE50F}
 DAT 1775299628</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
-<o:Column Id="o67">
+<o:Column Id="o68">
 <a:ObjectID>65319B98-83DD-431B-8CA4-1536D5DC85EA</a:ObjectID>
 <a:Name>IdUser</a:Name>
 <a:Code>IDUSER</a:Code>
@@ -4115,7 +4130,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o68">
+<o:Column Id="o69">
 <a:ObjectID>3C8FC653-53E6-4E64-8DC5-0D867854D6E1</a:ObjectID>
 <a:Name>IdMsg</a:Name>
 <a:Code>IDMSG</a:Code>
@@ -4131,7 +4146,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o69">
+<o:Column Id="o70">
 <a:ObjectID>01DF4B5F-6E31-4407-88DF-CED773E7161D</a:ObjectID>
 <a:Name>RecivedAt</a:Name>
 <a:Code>RECIVEDAT</a:Code>
@@ -4145,7 +4160,7 @@ ORG {5DBE47B2-B980-4CB3-AAD7-B6DA7C161C69}
 DAT 1775299628</a:History>
 <a:DataType>DATE</a:DataType>
 </o:Column>
-<o:Column Id="o70">
+<o:Column Id="o71">
 <a:ObjectID>AD55C511-5AB8-4223-8645-A7A05D4F38DE</a:ObjectID>
 <a:Name>MsgVue</a:Name>
 <a:Code>MSGVUE</a:Code>
@@ -4159,7 +4174,7 @@ ORG {B7F8717C-434B-4639-A952-038AD3411441}
 DAT 1775299628</a:History>
 <a:DataType>BOOL</a:DataType>
 </o:Column>
-<o:Column Id="o71">
+<o:Column Id="o72">
 <a:ObjectID>B5C0BE40-277D-477E-9C28-25F66948FF4B</a:ObjectID>
 <a:Name>VueAt</a:Name>
 <a:Code>VUEAT</a:Code>
@@ -4175,7 +4190,7 @@ DAT 1775299628</a:History>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o72">
+<o:Key Id="o73">
 <a:ObjectID>CDDD62EE-50E2-48F2-B1BC-4ED48CA85AB0</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4186,13 +4201,13 @@ DAT 1775299628</a:History>
 <a:History>ORG {499FBD5F-2E4D-4EDC-814F-7414FD9D6E2D}
 DAT 1775299782</a:History>
 <c:Key.Columns>
-<o:Column Ref="o67"/>
 <o:Column Ref="o68"/>
+<o:Column Ref="o69"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o72"/>
+<o:Key Ref="o73"/>
 </c:PrimaryKey>
 </o:Table>
 <o:Table Id="o45">
@@ -4209,7 +4224,7 @@ ORG {A6E8D8F2-BAE0-48C4-BB47-AD10D5996C46}
 DAT 1775856298</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
-<o:Column Id="o73">
+<o:Column Id="o74">
 <a:ObjectID>B9457162-FDD3-40D4-91BE-4312777E9268</a:ObjectID>
 <a:Name>IdToken</a:Name>
 <a:Code>IDTOKEN</a:Code>
@@ -4225,7 +4240,7 @@ DAT 1775856298</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o74">
+<o:Column Id="o75">
 <a:ObjectID>EB3D590E-9B18-4573-A3C7-F4FB36DE278C</a:ObjectID>
 <a:Name>IdUser</a:Name>
 <a:Code>IDUSER</a:Code>
@@ -4241,7 +4256,7 @@ DAT 1775856298</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o75">
+<o:Column Id="o76">
 <a:ObjectID>6ED96E9E-B066-42DA-8C95-B8220F65DCEA</a:ObjectID>
 <a:Name>Token</a:Name>
 <a:Code>TOKEN</a:Code>
@@ -4256,7 +4271,7 @@ DAT 1775856298</a:History>
 <a:DataType>VARCHAR(300)</a:DataType>
 <a:Length>300</a:Length>
 </o:Column>
-<o:Column Id="o76">
+<o:Column Id="o77">
 <a:ObjectID>A48B93A0-0E14-42A9-85D7-71257FFD27B1</a:ObjectID>
 <a:Name>ExpiresAt</a:Name>
 <a:Code>EXPIRESAT</a:Code>
@@ -4270,7 +4285,7 @@ ORG {A4126E64-E292-4EC9-863E-D966EEEEA848}
 DAT 1775856298</a:History>
 <a:DataType>DATE</a:DataType>
 </o:Column>
-<o:Column Id="o77">
+<o:Column Id="o78">
 <a:ObjectID>C40229F0-DCB8-4DEA-A44B-E48DD44993A9</a:ObjectID>
 <a:Name>CreatedAt</a:Name>
 <a:Code>CREATEDAT</a:Code>
@@ -4284,7 +4299,7 @@ ORG {EFF75A53-53B8-4F18-86BC-28726E1E4436}
 DAT 1775856298</a:History>
 <a:DataType>DATE</a:DataType>
 </o:Column>
-<o:Column Id="o78">
+<o:Column Id="o79">
 <a:ObjectID>8B5C99F5-012C-4CFE-A229-5AB78044C938</a:ObjectID>
 <a:Name>IsValid</a:Name>
 <a:Code>ISVALID</a:Code>
@@ -4300,7 +4315,7 @@ DAT 1775856298</a:History>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o79">
+<o:Key Id="o80">
 <a:ObjectID>A2D4C992-2CFB-414D-BC6C-F5983F83D4EE</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4314,12 +4329,12 @@ ORG {C1D53BAA-AD60-40AD-8755-C6F14A24B535}
 DAT 1775856298
 INS COLNCOL {12E22AC2-BAEA-421A-9503-21F5ECD05A35}</a:History>
 <c:Key.Columns>
-<o:Column Ref="o73"/>
+<o:Column Ref="o74"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o79"/>
+<o:Key Ref="o80"/>
 </c:PrimaryKey>
 </o:Table>
 <o:Table Id="o43">
@@ -4336,7 +4351,7 @@ ORG {12B1886A-B964-4751-BFB0-6DEE0C5D21E8}
 DAT 1775299628</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
-<o:Column Id="o80">
+<o:Column Id="o81">
 <a:ObjectID>F1EE7899-22C6-407C-8726-91C50E245FEB</a:ObjectID>
 <a:Name>IdChatRoom</a:Name>
 <a:Code>IDCHATROOM</a:Code>
@@ -4352,7 +4367,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o81">
+<o:Column Id="o82">
 <a:ObjectID>232FA2F4-7E6B-4ACB-B6EC-5860ACEA2FA6</a:ObjectID>
 <a:Name>IdUser</a:Name>
 <a:Code>IDUSER</a:Code>
@@ -4368,7 +4383,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o82">
+<o:Column Id="o83">
 <a:ObjectID>80B8F996-26DA-4690-9FCC-FEA610BF2F64</a:ObjectID>
 <a:Name>UserAddAt</a:Name>
 <a:Code>USERADDAT</a:Code>
@@ -4384,7 +4399,7 @@ DAT 1775299628</a:History>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o83">
+<o:Key Id="o84">
 <a:ObjectID>70892DD9-CC8A-4229-9F54-4CFA5B6995A7</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4395,13 +4410,13 @@ DAT 1775299628</a:History>
 <a:History>ORG {E0FFF3C1-0682-4CA2-AAAC-551ADE90A244}
 DAT 1775299782</a:History>
 <c:Key.Columns>
-<o:Column Ref="o80"/>
 <o:Column Ref="o81"/>
+<o:Column Ref="o82"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o83"/>
+<o:Key Ref="o84"/>
 </c:PrimaryKey>
 </o:Table>
 <o:Table Id="o44">
@@ -4418,7 +4433,7 @@ ORG {2F3694AB-30DB-4AD6-95C8-002859B909A0}
 DAT 1775299628</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
-<o:Column Id="o84">
+<o:Column Id="o85">
 <a:ObjectID>31610D6D-1F29-4163-AF70-7D622EDE753F</a:ObjectID>
 <a:Name>IdMsg</a:Name>
 <a:Code>IDMSG</a:Code>
@@ -4434,7 +4449,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o85">
+<o:Column Id="o86">
 <a:ObjectID>835457C4-4147-45EC-A810-F83FD62C1E70</a:ObjectID>
 <a:Name>IdChatRoom</a:Name>
 <a:Code>IDCHATROOM</a:Code>
@@ -4450,7 +4465,7 @@ DAT 1775299628</a:History>
 <a:Length>8</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o86">
+<o:Column Id="o87">
 <a:ObjectID>C143A06D-F553-429F-BF23-E225C0EBC5DB</a:ObjectID>
 <a:Name>MsgSendChatRoomAt</a:Name>
 <a:Code>MSGSENDCHATROOMAT</a:Code>
@@ -4466,7 +4481,7 @@ DAT 1775299628</a:History>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o87">
+<o:Key Id="o88">
 <a:ObjectID>D2CDEE30-BDE0-4454-B279-0E1E62C8A3E8</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -4477,13 +4492,13 @@ DAT 1775299628</a:History>
 <a:History>ORG {E808BAD4-22B8-4AF0-A731-299706DFF3DD}
 DAT 1775299782</a:History>
 <c:Key.Columns>
-<o:Column Ref="o84"/>
 <o:Column Ref="o85"/>
+<o:Column Ref="o86"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o87"/>
+<o:Key Ref="o88"/>
 </c:PrimaryKey>
 </o:Table>
 </c:Tables>
@@ -4513,7 +4528,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o50"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o88">
+<o:ReferenceJoin Id="o89">
 <a:ObjectID>3520E200-FAF6-4451-9F11-328CCDB9F117</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4555,7 +4570,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o50"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o89">
+<o:ReferenceJoin Id="o90">
 <a:ObjectID>40BF18B5-6EA4-4BA2-B146-3333231C95BB</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4597,7 +4612,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o50"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o90">
+<o:ReferenceJoin Id="o91">
 <a:ObjectID>8E238FD4-6F83-4C86-B63B-3D42B3B3FB96</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4609,7 +4624,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o46"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o67"/>
+<o:Column Ref="o68"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4639,7 +4654,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o55"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o91">
+<o:ReferenceJoin Id="o92">
 <a:ObjectID>DBBD00CA-A15C-402B-99E9-FD9AE30E077D</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4651,7 +4666,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o51"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o64"/>
+<o:Column Ref="o65"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4682,7 +4697,7 @@ ATT PIDF</a:History>
 <o:Key Ref="o59"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o92">
+<o:ReferenceJoin Id="o93">
 <a:ObjectID>071E9E20-11DD-4BE2-89C0-5926A294E4F3</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4694,7 +4709,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o56"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o65"/>
+<o:Column Ref="o66"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4724,7 +4739,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o55"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o93">
+<o:ReferenceJoin Id="o94">
 <a:ObjectID>734C6F40-0BEC-4847-8333-D20EB8091C66</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4736,7 +4751,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o51"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o68"/>
+<o:Column Ref="o69"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4763,10 +4778,10 @@ DAT 1775299628</a:History>
 <o:Table Ref="o43"/>
 </c:ChildTable>
 <c:ParentKey>
-<o:Key Ref="o63"/>
+<o:Key Ref="o64"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o94">
+<o:ReferenceJoin Id="o95">
 <a:ObjectID>B9F93F7B-0A73-4DAD-ADAB-45DCE59418FE</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4778,7 +4793,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o60"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o80"/>
+<o:Column Ref="o81"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4808,7 +4823,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o50"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o95">
+<o:ReferenceJoin Id="o96">
 <a:ObjectID>CE55D2C8-5BEF-46E1-BA81-E08764DCE537</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4820,7 +4835,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o46"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o81"/>
+<o:Column Ref="o82"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4850,7 +4865,7 @@ DAT 1775299628</a:History>
 <o:Key Ref="o55"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o96">
+<o:ReferenceJoin Id="o97">
 <a:ObjectID>2CB82ACC-F37F-41C7-A859-9DB207EC8770</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4862,7 +4877,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o51"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o84"/>
+<o:Column Ref="o85"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4889,10 +4904,10 @@ DAT 1775299628</a:History>
 <o:Table Ref="o44"/>
 </c:ChildTable>
 <c:ParentKey>
-<o:Key Ref="o63"/>
+<o:Key Ref="o64"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o97">
+<o:ReferenceJoin Id="o98">
 <a:ObjectID>F43FBB9C-55D1-4F94-824B-3364664DA479</a:ObjectID>
 <a:CreationDate>1775299781</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4904,7 +4919,7 @@ DAT 1775299782</a:History>
 <o:Column Ref="o60"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o85"/>
+<o:Column Ref="o86"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
@@ -4934,7 +4949,7 @@ DAT 1775856298</a:History>
 <o:Key Ref="o50"/>
 </c:ParentKey>
 <c:Joins>
-<o:ReferenceJoin Id="o98">
+<o:ReferenceJoin Id="o99">
 <a:ObjectID>C6A494C4-B3C7-4968-ABB1-1A3B66B46DF1</a:ObjectID>
 <a:CreationDate>1775856355</a:CreationDate>
 <a:Creator>lenevo</a:Creator>
@@ -4946,14 +4961,14 @@ DAT 1775856356</a:History>
 <o:Column Ref="o46"/>
 </c:Object1>
 <c:Object2>
-<o:Column Ref="o74"/>
+<o:Column Ref="o75"/>
 </c:Object2>
 </o:ReferenceJoin>
 </c:Joins>
 </o:Reference>
 </c:References>
 <c:DefaultGroups>
-<o:Group Id="o99">
+<o:Group Id="o100">
 <a:ObjectID>4414DC79-D0D0-4A5F-9DD4-CC145CCDAC97</a:ObjectID>
 <a:Name>PUBLIC</a:Name>
 <a:Code>PUBLIC</a:Code>
@@ -4964,7 +4979,7 @@ DAT 1775856356</a:History>
 </o:Group>
 </c:DefaultGroups>
 <c:TargetModels>
-<o:TargetModel Id="o100">
+<o:TargetModel Id="o101">
 <a:ObjectID>CEBB0141-E50D-4088-90D1-CDC86400977F</a:ObjectID>
 <a:Name>PostgreSQL 8</a:Name>
 <a:Code>PGSQL80</a:Code>
@@ -4979,7 +4994,7 @@ DAT 1775856356</a:History>
 <o:Shortcut Ref="o4"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o101">
+<o:TargetModel Id="o102">
 <a:ObjectID>B7B95346-1DE7-45C3-8D85-57FDDB1330E8</a:ObjectID>
 <a:Name>ChatAppMLD</a:Name>
 <a:Code>CHATAPPMLD</a:Code>
