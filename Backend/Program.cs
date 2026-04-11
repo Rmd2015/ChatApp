@@ -26,10 +26,8 @@ builder.Services.AddDbContext<ChatDbContext>(options =>
          
         });
 });
-// ====================== JWT + verfication des tokens prealabele ======================
+/// ====================== JWT Authentication + Blacklist Verification ======================
 var jwtSection = builder.Configuration.GetSection("Jwt");
-var jwtKey = jwtSection["Key"]
-    ?? throw new InvalidOperationException("JWT Key is not configured");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -42,32 +40,50 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = jwtSection["Issuer"],
             ValidAudience = jwtSection["Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(jwtSection["Key"] ?? throw new InvalidOperationException("JWT Key is missing"))),
             ClockSkew = TimeSpan.Zero
         };
 
-        // Vérification de la blacklist (Tokens)
+        // ====================== BLACKLIST CHECK ======================
         options.Events = new JwtBearerEvents
         {
             OnTokenValidated = async context =>
             {
-                var token = context.SecurityToken as JwtSecurityToken;
-                if (token == null) return;
-
-                var dbContext = context.HttpContext.RequestServices.GetRequiredService<ChatDbContext>();
-
-                var isBlacklisted = await dbContext.Tokens
-                    .AnyAsync(t => t.Token == token.RawData
-                                && t.Expiresat > DateTime.UtcNow
-                                && t.Isvalid == false);
-
-                if (isBlacklisted)
+                try
                 {
-                    context.Fail("Token has been revoked");
+                    var authHeader = context.HttpContext.Request.Headers["Authorization"].ToString();
+
+                    if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+                    {
+                        Console.WriteLine("No Bearer token found in header");
+                        return;
+                    }
+
+                    var rawToken = authHeader.Replace("Bearer ", "").Trim();
+                    Console.WriteLine($"Token to check in blacklist: {rawToken.Substring(0, 50)}...");
+
+                    var dbContext = context.HttpContext.RequestServices
+                        .GetRequiredService<ChatDbContext>();
+
+                    var isBlacklisted = await dbContext.Tokens
+                        .AnyAsync(t => t.Token == rawToken && t.Isvalid == false);
+
+                    Console.WriteLine($"IsBlacklisted = {isBlacklisted}");
+
+                    if (isBlacklisted)
+                    {
+                        Console.WriteLine("Token is blacklisted → rejecting request");
+                        context.Fail("Token has been revoked");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in blacklist check: {ex.Message}");
                 }
             }
         };
-    }); ;
+    });
 // ====================== Ajout des services ======================
 
 builder.Services.AddControllers();

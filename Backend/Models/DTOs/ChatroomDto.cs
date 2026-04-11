@@ -20,4 +20,13 @@ namespace Backend.Models.DTOs
         [StringLength(30)]
         public string ChatRoomLabel { get; set; } = string.Empty;
     }
+
+    public class UpdateChatroomDto
+    {
+        [Required]
+        public long CreatedByUserId { get; set; }
+        [Required]
+        [StringLength(30)]
+        public string ChatRoomLabel { get; set; } = string.Empty;
+    }
 }
