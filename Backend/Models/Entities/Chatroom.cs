@@ -19,6 +19,11 @@ public partial class Chatroom
     [Column("roomcreatedat")]
     public DateTime? Roomcreatedat { get; set; }
 
+    [Column("chatroomlabel")]
+    [StringLength(30)]
+    public string Chatroomlabel { get; set; } = null!;
+
+
     [InverseProperty("IdchatroomNavigation")]
     public virtual ICollection<Chatroommember> Chatroommember { get; set; } = new List<Chatroommember>();
 
