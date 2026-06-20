@@ -53,6 +53,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 try
                 {
                     var authHeader = context.HttpContext.Request.Headers["Authorization"].ToString();
+                    var currentIpAddress = context.HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1";
 
                     if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
                     {
@@ -67,9 +68,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         .GetRequiredService<ChatDbContext>();
 
                     var isBlacklisted = await dbContext.Tokens
-                        .AnyAsync(t => t.Token == rawToken && t.Isvalid == false);
+                        .AnyAsync(t => t.Token == rawToken && t.Isvalid == false || t.Ipaddress.ToString() != currentIpAddress);
 
-                    Console.WriteLine($"IsBlacklisted = {isBlacklisted}");
+                    Console.WriteLine($"IsBlacklisted or le token est vole pqr une autre user = {isBlacklisted}");
 
                     if (isBlacklisted)
                     {
@@ -85,7 +86,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 // ====================== Ajout des services ======================
-
+// Enregistrement du service (Scoped signifie qu'une seule instance est créée par requête HTTP)
+builder.Services.AddScoped<Backend.Services.UserAuthenticator>();
 builder.Services.AddControllers();
 // ====================== Swagger avec JWT ======================
 builder.Services.AddEndpointsApiExplorer();

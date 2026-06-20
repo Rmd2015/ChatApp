@@ -17,6 +17,10 @@ namespace Backend.Models.DTOs
         public DateTime? CreatedAt { get; set; }
 
         public bool IsValid { get; set; }
+        public DateTime Lastusedat { get; set; }
+        public string Ipaddress { get; set; }
+        public string Useragent { get; set; }
+
     }
 
     public class TokensDtoForSelect

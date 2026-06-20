@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Models.Entities;
@@ -30,6 +29,14 @@ public partial class Tokens
 
     [Column("isvalid")]
     public bool? Isvalid { get; set; }
+
+    [Column("lastusedat")]
+    public DateTime? Lastusedat { get; set; }
+
+    [Column("ipaddress", TypeName = "inet")]
+    public IPAddress? Ipaddress { get; set; }
+    [Column("useragent")]
+    public string? Useragent { get; set; }
 
     [ForeignKey("Iduser")]
     [InverseProperty("Tokens")]
